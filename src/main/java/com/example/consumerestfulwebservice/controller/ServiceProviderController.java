@@ -24,6 +24,6 @@ public class ServiceProviderController {
     @GetMapping( "/quote")
     public String getQuote(){
         Quote q =  restTemplate.getForObject(jsonUrl, Quote.class);
-       return "JSON response: ".concat(q.toString());
+       return "JSON response: ".concat(q != null ? q.toString() : "");
     }
 }
